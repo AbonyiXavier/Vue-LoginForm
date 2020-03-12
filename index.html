@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./CSS/bootstrap.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="card bg-primary text-center card-form">
+              <div class="card-body">
+                <h3>Login Today</h3>
+                <p>Please fill out this form to login</p>
+                <form>
+                  <div class="form-group">
+                    <input
+                      v-model="email"
+                      type="email"
+                      class="form-control form-control-lg"
+                      placeholder="Email"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      v-model="password"
+                      type="password"
+                      class="form-control form-control-lg"
+                      placeholder="Password"
+                    />
+                  </div>
+                  <input
+                    type="submit"
+                    class="btn btn-outline-light btn-block mb-2"
+                    @click.prevent="submit"
+                  />
+                  <input
+                    value="Reset"
+                    type="submit"
+                    class="btn btn-outline-light btn-block"
+                    @click.prevent="reset"
+                  />
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6" v-if="show">
+            <h3 class="display-5">Login <strong>details</strong></h3>
+            <div class="d-flex flex-row">
+              <div class="p-4 align-self-start">
+                <i class="fas fa-check-square"></i>
+              </div>
+              <div class="p-4 align-self-end">
+                <p><span>Email:</span> {{ displayEmail }}</p>
+                <p><span> Password:</span> {{ displayPassword }}</p>
+                <input
+                  value="Clear"
+                  type="submit"
+                  class="btn btn-primary btn-block"
+                  @click.prevent="clear"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/bootstrap.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
+
+<style>
+  p span {
+    font-size: 20px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-family: "Trade Winds", cursive;
+    font-family: "Indie Flower", cursive;
+    font-family: "Dancing Script", cursive;
+    font-family: "Permanent Marker", cursive;
+  }
+</style>
